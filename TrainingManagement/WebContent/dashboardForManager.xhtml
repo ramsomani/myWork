@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="/jquery/canvasjs.min.js"></script>
+	<script type="text/javascript" src="/jquery/jquery/graph.js"></script>
+	<link rel="stylesheet"
+		href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="resources/demos/style.css" />
+	<link rel="stylesheet" href="style.css"/>
+	<script>
+		$(function() {
+			$("#tabs").tabs();
+		});
+		$(function() {
+		    $( ".lbutton" ).tooltip();
+		  });
+	</script>
+	
+</h:head>
+<h:body id="bodyBody">
+<h:form prependId="false">
+<div>
+	<div id="header">
+		<div></div>
+	</div>
+	
+	<div id="rightNavigation">
+		<div id="rightHeader">Actions</div>
+		<div id="rightBody">
+			<div id="r1" >
+				<h:commandButton class="rightNavigationButton" action="#{courseBean.createCourse}" value="Create A Course  >"></h:commandButton>
+			</div>
+			<div id="r2" >
+				<h:commandButton class="rightNavigationButton" value="Create A User    >"></h:commandButton>
+			</div>
+			<div id="r3" >
+				<h:commandButton class="rightNavigationButton" value="Create A Team    >"></h:commandButton>
+			</div>
+		</div>
+	</div>
+
+	<div id="leftNavigation">
+	
+		<div id="1" class="lbutton">
+					<h:commandButton image="/uploads/1.png" title="Dashboard"></h:commandButton>
+				</div>
+
+				<div id="2" class="lbutton">
+					<h:commandButton image="/uploads/2.png" title="Courses" ></h:commandButton>
+
+				</div>
+				<div id="3" class="lbutton">
+					<h:commandButton image="/uploads/3.png" title="People"></h:commandButton>
+
+				</div>
+				<div id="4" class="lbutton">
+					<h:commandButton image="/uploads/4.png" title="Team"></h:commandButton>
+
+				</div>
+				<div id="5" class="lbutton">
+					<h:commandButton image="/uploads/5.png" title="Reports"></h:commandButton>
+
+				</div>
+				<div id="6" class="lbutton">
+					<h:commandButton image="/uploads/6.png" title="Messages"></h:commandButton>
+
+				</div>
+				<div id="7" class="lbutton">
+					<h:commandButton image="/uploads/7.png" title="Settings"></h:commandButton>
+				</div>
+	</div>
+
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">DashBoard</a></li>
+			<li><a href="#tabs-2">Activity</a></li>
+		</ul>
+
+		<div id="tabs-1">
+			<div id="mainDashboard">
+				<div id="m1"><div class="circle"></div></div>
+				<div id="m2"><div class="circle"></div></div>
+				<div id="m3"><div class="circle"></div></div>
+				<div id="m4"><div class="circle"></div></div>
+			</div>
+			<div id="refresh"></div>
+		</div>
+		<div id="tabs-2">Activity Tab</div>
+	</div>
+
+	<div id="middleDashboard">
+		<div id="graph">
+			<div id="graphHeader">Historical</div>
+			<div id="graphBody"></div>
+		</div>
+		<div id="submission">
+			<div id="submissionHeader">Assignment Submission</div>
+			<div id="submissionBody"></div>
+		</div>
+	</div>
+
+	<div id="bottomDashboard"></div>
+
+</div>
+</h:form>
+</h:body>
+</html>

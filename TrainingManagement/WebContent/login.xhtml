@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="jquery/register.js"></script>
+<link rel="stylesheet" href="style.css"/>
+</h:head>
+<body id="loginBody">
+	<div id= "loginBox">
+	<h:form prependId="false" id="loginForm">
+	
+		<h2>Login</h2>
+		<table style="align:center">
+			<tr>
+				<td>#{param.error}</td>
+			</tr>
+			<tr>
+				<td>User Name</td>
+				<td><h:inputText type="text" id="username" value="#{userBean.username}"></h:inputText></td>
+				<td><span id="spanuser"></span></td>
+			</tr>
+			<tr>	
+				<td>Password</td>
+				<td><h:inputSecret type="text" id="password" value="#{userBean.password}"></h:inputSecret></td>
+				<td><span id="spanpassword"></span></td>
+			</tr>
+			<tr>	
+				<td><h:selectBooleanCheckbox id="remember" value="#{userBean.rememberMe}" /></td>
+				<td>Remember Me</td>
+			</tr>
+			<tr>
+				<td align="center"><h:commandButton type="submit" value="Register" action="registration" id="registerButton"/></td> 
+				<td align="center"><h:commandButton type="submit" value="Login" action="#{userBean.authenticate}" id="loginButton"/></td>
+			</tr>
+		</table>
+	</h:form>
+	</div>
+</body>
+</html>

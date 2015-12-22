@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" href="style.css" />
+
+</h:head>
+<h:body id="viewCourseBody">
+	<div>
+	<h:form>
+		<div id="leftNavigationCourse">
+
+			<div id="1" class="lbutton">
+				<h:commandButton image="/uploads/1.png" title="Dashboard"></h:commandButton>
+			</div>
+
+			<div id="2" class="lbutton">
+				<h:commandButton image="/uploads/2.png" title="Courses"
+					action="#{courseBean.displayCourse}"></h:commandButton>
+
+			</div>
+			<div id="3" class="lbutton">
+				<h:commandButton image="/uploads/3.png" title="People"></h:commandButton>
+
+			</div>
+			<div id="4" class="lbutton">
+				<h:commandButton image="/uploads/4.png" title="Team"></h:commandButton>
+
+			</div>
+			<div id="5" class="lbutton">
+				<h:commandButton image="/uploads/5.png" title="Reports"></h:commandButton>
+
+			</div>
+			<div id="6" class="lbutton">
+				<h:commandButton image="/uploads/6.png" title="Messages"></h:commandButton>
+
+			</div>
+			<div id="7" class="lbutton">
+				<h:commandButton image="/uploads/7.png" title="Settings"></h:commandButton>
+			</div>
+		</div>
+		<div id="viewCourse" style="float: left; margin-left: 100px">
+			<table border="1px solid" style="height: 200px;width: 250px; background-color: #FFFFFF;">
+				<tr>
+					<td colspan="3">Course Details-<h:outputText
+							value="#{courseBean.courseRef.course_title}" /></td>
+				</tr>
+				<ui:repeat value="#{courseBean.courseRef.viewHeadingList}" var="heading">
+					<tr>
+						<td colspan="3"
+							style="font-weight: bolder; font-size: 15px; background-color: #FFFFFF;">
+							<h:outputText style="font-weight:bold;"
+								value="#{heading.heading_text}" />
+						</td>
+					</tr>
+					<ui:repeat value="#{heading.viewSubheadingList}" var="subheading">
+						<tr>
+							<td style="background-color: white"><strong>*</strong></td>
+							<td style="background-color: white"><h:outputText
+									value="#{subheading.subheading_text}" /></td>
+							<td style="background-color: white"><h:outputText
+									value="#{subheading.status}" /></td>
+
+						</tr>
+					</ui:repeat>
+				</ui:repeat>
+			</table>
+		</div>
+
+	</h:form>
+	</div>
+</h:body>
+</html>

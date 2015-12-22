@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+</h:head>
+<h:body>
+
+	<h:form prependId="false">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><h:inputText id="name" value="#{userBean.name}"
+						 required="true"
+						requiredMessage="Please Enter Valid Name">
+						<f:validateLength maximum="5" minimum="5" />
+						<f:validateRegex pattern="^[A-Za-z]+$"/>
+					</h:inputText></td>
+				<td><h:messages for="name" style="color:red;" /></td>
+			</tr>
+			<tr>
+				<td>Salary:</td>
+				<td><h:inputText id="salary" value="#{userBean.salary}"
+						validatorMessage="Not In Range(2000-50000)" required="true"
+						requiredMessage="Please Enter Salaray"
+						converterMessage="Enter Only Numbers">
+						<f:validateLongRange maximum="50000" minimum="2000" />
+						<f:convertNumber integerOnly="true" />
+					</h:inputText></td>
+				<td><h:message for="salary" style="color:red;" /></td>
+			</tr>
+
+			<tr>
+				<td>Date Of Joining:</td>
+				<td><h:inputText id="doj" value="#{userBean.doj}"
+						converterMessage="Please Enter Correct format" required="true"
+						requiredMessage="Please Enter dob">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+					</h:inputText></td>
+				<td><h:message for="doj" style="color:red;" /></td>
+			</tr>
+
+			<tr>
+				<td>Product:</td>
+				<td><h:inputText id="product" value="#{userBean.product}"
+						validatorMessage="It Should End With t" required="true"
+						requiredMessage="Please Enter valid Product">
+						<f:validateRegex pattern=".*t"></f:validateRegex>
+					</h:inputText></td>
+				<td><h:message for="product" style="color:red;" /></td>
+			</tr>
+			<tr>
+				<td><h:commandButton id="button" type="submit" value="submit"></h:commandButton>
+				</td>
+			</tr>
+		</table>
+	</h:form>
+	<table>
+		<tr>
+			<td><h:outputText value="#{userBean.name}"></h:outputText></td>
+		</tr>
+		<tr>
+			<td><h:outputText value="#{userBean.doj}">
+					<f:convertDateTime type="date" dateStyle="short"></f:convertDateTime>
+				</h:outputText></td>
+		</tr>
+		<tr>
+			<td><h:outputText value="#{userBean.salary}"></h:outputText></td>
+		</tr>
+		<tr>
+			<td><h:outputText value="#{userBean.product}"></h:outputText></td>
+		</tr>
+	</table>
+
+</h:body>
+</html>

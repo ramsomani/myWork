@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" href="style.css" />
+
+</h:head>
+<h:body id="viewCourseBody">
+	<div>
+	<h:form prependId="false">
+		
+		<div id="viewCourse" style="float: left; margin-left: 100px">
+			<table border="1px solid" style="height: 200px;width: 250px; background-color: #FFFFFF;">
+				<tr>
+					<td colspan="3">Course Details-<h:outputText
+							value="#{courseBean.courseRef1.course_title}" /></td>
+				</tr>
+				<ui:repeat value="#{courseBean.courseRef1.viewHeadingList}" var="heading">
+					<tr>
+						<td colspan="3"
+							style="font-weight: bolder; font-size: 15px; background-color: #FFFFFF;">
+							<h:outputText style="font-weight:bold;"
+								value="#{heading.heading_text}" />
+						</td>
+					</tr>
+					<ui:repeat value="#{heading.viewSubheadingList}" var="subheading">
+						<tr>
+							<td style="background-color: white"><strong>*</strong></td>
+							<td style="background-color: white"><h:outputText
+									value="#{subheading.subheading_text}">
+								</h:outputText></td>
+							<td style="background-color: white">
+							<h:outputText
+									value="#{subheading.subheading_id}">
+				
+							</h:outputText></td>
+							<td style="background-color: white"><h:outputText
+									value="#{subheading.status}" /></td>
+							
+							<td><h:commandButton value="Update" action="#{subHeadingBean.updateStatus}">
+							<f:setPropertyActionListener value="#{subheading.subheading_id}" target="#{subHeadingBean.subheading_status_rev}"></f:setPropertyActionListener>
+							</h:commandButton>
+							</td>
+
+						</tr>
+					</ui:repeat>
+				</ui:repeat>
+				<tr>
+				<td style="background-color: white">
+							<h:selectOneMenu value="#{subHeadingBean.status}">
+									<f:selectItem itemValue="Pending" itemLabel="Pending" />
+									<f:selectItem itemValue="Not Completed" itemLabel="Not Completed" />
+									<f:selectItem itemValue="Completed" itemLabel="Completed" />
+								</h:selectOneMenu>
+				</td>
+				<td><h:commandLink value="Cancel" action="trainerFacelet" ></h:commandLink></td>
+				</tr>
+			</table>
+		</div>
+	</h:form>
+	</div>
+</h:body>
+</html>

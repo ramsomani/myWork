@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="/jquery/canvasjs.min.js"></script>
+	<script type="text/javascript" src="/jquery/jquery/graph.js"></script>
+	<link rel="stylesheet"
+		href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="resources/demos/style.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script>
+		$(function() {
+			$("#headingTabs").tabs();
+		});
+	</script>
+</h:head>
+<h:body  id="headingBody">
+	
+		<div>
+		<h:form prependId="false"> 
+			<div id="leftNavigationHeading">
+
+				<div id="1" class="lbutton">
+					<h:commandButton image="/uploads/1.png" title="Dashboard"></h:commandButton>
+				</div>
+
+				<div id="2" class="lbutton">
+					<h:commandButton image="/uploads/2.png" title="Courses"></h:commandButton>
+
+				</div>
+				<div id="3" class="lbutton">
+					<h:commandButton image="/uploads/3.png" title="People"></h:commandButton>
+
+				</div>
+				<div id="4" class="lbutton">
+					<h:commandButton image="/uploads/4.png" title="Team"></h:commandButton>
+
+				</div>
+				<div id="5" class="lbutton">
+					<h:commandButton image="/uploads/5.png" title="Reports"></h:commandButton>
+
+				</div>
+				<div id="6" class="lbutton">
+					<h:commandButton image="/uploads/6.png" title="Messages"></h:commandButton>
+
+				</div>
+				<div id="7" class="lbutton">
+					<h:commandButton image="/uploads/7.png" title="Settings"></h:commandButton>
+
+				</div>
+			</div>
+
+
+			<div id="headingTabs">
+				<ul>
+					<li><a href="#tabs-1">Main Heading</a></li>
+					<li><a href="#tabs-2">Sub Heading</a></li>
+				</ul>
+
+				<div id="tabs-1">
+					<div id="addHeadings">
+						
+							<table>
+								<tr>
+									<td>Course Title:</td>
+									<td><h:selectOneMenu value="#{headingBean.course_id}">
+											<f:selectItems value="#{headingBean.headingList}"></f:selectItems>
+										</h:selectOneMenu></td>
+
+								</tr>
+
+								<tr>
+									<td>Heading:</td>
+									<td><h:inputText value="#{headingBean.heading_text}" /></td>
+								</tr>
+
+								<tr>
+									<td><h:commandButton value="Save"
+											action="#{headingBean.saveHeading}" /></td>
+									<td><h:commandButton value="Save and Add More"
+											action="#{headingBean.saveAndAddHeading}" /></td>
+									<td><h:commandLink value="Cancel" action="addCourse" /></td>
+								</tr>
+							</table>
+						
+					</div>
+				</div>
+				<div id="tabs-2">
+					<div id="addSubHeadings">
+						
+							<table>
+								<tr>
+									<td>Course Title:</td>
+									<td><h:selectOneMenu>
+											<f:selectItems value="#{headingBean.headingList}"></f:selectItems>
+										</h:selectOneMenu></td>
+								</tr>
+
+								<tr>
+									<td>Heading:</td>
+									<td><h:selectOneMenu value="#{subHeadingBean.heading_id}">
+											<f:selectItems value="#{subHeadingBean.subheadingList}"></f:selectItems>
+										</h:selectOneMenu></td>
+								</tr>
+
+								<tr>
+									<td>Sub Heading:</td>
+									<td><h:inputText value="#{subHeadingBean.subheading_text}" /></td>
+								</tr>
+								
+								<tr>
+									<td>Status</td>
+									<td><h:selectOneMenu value="#{subHeadingBean.status}">
+									<f:selectItem itemValue="Pending" itemLabel="Pending" />
+									<f:selectItem itemValue="Not Completed" itemLabel="Not Completed" />
+									<f:selectItem itemValue="Completed" itemLabel="Completed" />
+									</h:selectOneMenu> </td>
+								</tr>
+
+								<tr>
+									<td><h:commandButton value="Save"
+											action="#{subHeadingBean.saveSubheading}" /></td>
+									<td><h:commandButton value="Save and Add More"
+											action="#{subHeadingBean.saveAndAddSubheading}" /></td>
+									<td><h:commandLink value="Cancel" action="addCourse" /></td>
+								</tr>
+							</table>
+						
+					</div>
+				</div>
+			</div>
+		</h:form>
+		</div>
+	
+</h:body>
+</html>

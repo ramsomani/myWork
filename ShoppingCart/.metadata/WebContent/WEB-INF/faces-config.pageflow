@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14453531566115" configfile="/ShoppingCart/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="240" y="228" id="pf144535743730910" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf144535743730911 pf144535880260815" inlinks="pf144535790293314" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="register.xhtml" x="408" y="72" id="pf144535743730912" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf144535790293314" inlinks="pf144535743730911" path="/register.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="shopping.xhtml" x="146" y="112" id="pf144535880260816" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14455974929210" inlinks="pf144535880260815" path="/shopping.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="slip.xhtml" x="24" y="192" id="pf14455974929211" inlinks="pf14455974929210" path="/slip.xhtml"/>
+  <links id="pf144535743730911" target="pf144535743730912" source="pf144535743730910" outcome="register" redirect="true"/>
+  <links id="pf144535790293314" target="pf144535743730910" source="pf144535743730912" outcome="login" redirect="true"/>
+  <links id="pf144535880260815" target="pf144535880260816" source="pf144535743730910" outcome="shopping" redirect="true"/>
+  <links id="pf14455974929210" target="pf14455974929211" source="pf144535880260816" outcome="slip" redirect="true"/>
+</pageflow:Pageflow>

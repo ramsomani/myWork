@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+function onLoad() {
+	
+	 $.ajax({
+		    type: 'GET',
+		    url:'CurrencyConvertorServlet', 
+		    dataType: 'json',
+		    success: function (result,status) {
+				alert("hi");
+		    	alert(result);
+		    	alert(status);
+		    	$("s").append(result);	
+		    },
+		    error: function (request, status, error) {
+		        alert("hii from error");
+		    }
+		  });
+	
+}
+</script>
+</head>
+
+<body>
+	<form action="CurrencyConvertorServlet" method="get">
+		<table>
+			<tr>
+				<td>Enter Currency</td>
+				<td><input type="text" name="amount" id="amount"></td>
+			</tr>
+			<tr>
+				<td>Result</td>
+				<td><div id="s"></div></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="convert" onclick="onLoad()"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

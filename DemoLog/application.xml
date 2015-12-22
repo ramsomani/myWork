@@ -1,0 +1,35 @@
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1446454647880" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="18"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1446454777518" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="18"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1446454885710" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="18"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1446455033073" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="19"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1446455720525" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="19"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1448257305422" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="19"/>
+</log4j:event>
+
+<log4j:event logger="com.yash.demolog.test.LogTest" timestamp="1450334410914" level="INFO" thread="main">
+<log4j:message><![CDATA[Hii From Logging method]]></log4j:message>
+<log4j:locationInfo class="com.yash.demolog.test.LogTest" method="getLog" file="LogTest.java" line="19"/>
+</log4j:event>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+	function loadDoc() {
+		alert("hi");
+		var id=document.getElementById("but");
+		var id1=id.value.toString();
+		
+		 
+		 $.ajax({
+			    type: 'GET',
+			    dataType: 'json',
+			    url:"UserController?id="+id1,  
+			    success: function (data, text) {
+			    	$("div").append(data.id + " " + data.name + " " + data.address);
+			    	
+			    },
+			    error: function (request, status, error) {
+			        alert("hii from error");
+			    }
+			   
+			  });
+		 alert("hello");
+	}
+	</script>
+	</head>
+		
+	<!-- 	
+		/* var xhttp;
+		
+		var emp;
+		if (window.XMLHttpRequest) {
+
+			xhttp = new XMLHttpRequest();
+			
+		} else {
+
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		
+		xhttp.onreadystatechange = function() {
+			alert("vi Test..'");
+			alert("vi"+xhttp.readyState);
+			alert("LO -"+xhttp.readyState == 4)
+			if (xhttp.readyState == 4 || xhttp.status == 200) {
+				alert(xhttp.readyState);
+				 emp = eval(xmlhttp.responseText);
+				 alert(emp);
+				document.getElementById("demo").innerHTML = emp;
+			}
+		}
+		xhttp.open("GET", "UserController?id="+id1, true);
+		xhttp.send(); */
+	}
+</script>
+</head>
+ -->
+
+<body>
+	<div></div>
+	<form action="UserController" method="get">
+	
+		<table>
+			<tr>
+				<td>Enter Id</td>
+				<td><input type="text" id="but" /></td>
+			</tr>
+			<tr>
+				<input type="button" onclick="loadDoc()" value="ok" />
+			</tr>
+
+
+		</table>
+	</form>
+</body>
+</html>

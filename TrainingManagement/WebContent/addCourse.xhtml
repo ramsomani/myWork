@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	>
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" href="style.css" />
+</h:head>
+
+<h:body id="addCourseBody">
+
+	<div>
+	<h:form prependId="false" >
+		<div id="leftNavigationCourse">
+	
+			<div id="1" class="lbutton">
+				<h:commandButton image="/uploads/1.png" title="Dashboard"></h:commandButton>
+			</div>
+
+			<div id="2" class="lbutton">
+				<h:commandButton image="/uploads/2.png" title="Courses" action="#{courseBean.displayCourse}"></h:commandButton>
+
+			</div>
+			<div id="3" class="lbutton">
+				<h:commandButton image="/uploads/3.png" title="People"></h:commandButton>
+
+			</div>
+			<div id="4" class="lbutton">
+				<h:commandButton image="/uploads/4.png" title="Team" ></h:commandButton>
+
+			</div>
+			<div id="5" class="lbutton">
+				<h:commandButton image="/uploads/5.png" title="Reports"></h:commandButton>
+
+			</div>
+			<div id="6" class="lbutton">
+				<h:commandButton image="/uploads/6.png" title="Messages"></h:commandButton>
+
+			</div>
+			<div id="7" class="lbutton">
+				<h:commandButton image="/uploads/7.png" title="Settings"></h:commandButton>
+			</div>
+			
+		</div>
+
+
+		<div id="courseCreateForm">
+			
+
+				<table id="courseTable">
+
+					<caption id="caption">CREATE A NEW COURSE</caption>
+
+					<tr>
+
+						<td>Course Title</td>
+						<td><h:inputText value="#{courseBean.course_title}"
+								style="width: 750px;" /></td>
+					</tr>
+
+					<tr>
+						<td>Description</td>
+						<td><h:inputTextarea value="#{courseBean.description}"
+								style="width: 750px;" /></td>
+					</tr>
+
+					<tr>
+						<td>Reference Code</td>
+						<td><h:inputText value="#{courseBean.reference_code}"
+								style="width: 750px;" /></td>
+					</tr>
+
+					<tr>
+						<td>Active</td>
+						<td><h:selectBooleanCheckbox
+								value="#{courseBean.course_status}" /></td>
+					</tr>
+
+					<tr>
+						<td>Course Image(Optional)</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td colspan="2"><hr></hr></td>
+					</tr>
+
+					<tr>
+						<td>Upload an Image</td>
+						<td><input type="file" accept="gif/jpeg/png"></input></td>
+					</tr> 
+
+					<tr>
+						<td colspan="2"><hr></hr></td>
+					</tr>
+
+					<tr>
+						<td><h:commandButton value="Save"
+								action="#{courseBean.saveCourse}" /></td>
+						<td><h:commandLink value="Cancel" action="body" /></td>
+					</tr>
+				</table>
+			
+
+		</div>
+		<div id="nextCourseButton">
+			<div>
+				<div id="notificationHeader">Notification</div>
+				<div id="notificationBody"></div>
+			</div>
+			<div>
+				
+					<h:commandButton value="Add Headings" action="addHeadingFacelet"></h:commandButton>
+				
+			</div>
+		</div>
+	</h:form>
+	</div>
+
+</h:body>
+
+</html>

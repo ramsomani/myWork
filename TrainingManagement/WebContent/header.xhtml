@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<link rel="stylesheet" href="style.css" />
+</h:head>
+<h:body>
+	<div
+		style="width: 100%; font-size: 36px; height: 100px; background-color: lightgray; color: white">
+		<h:form prependId="false">
+			<div id="headerImage">
+				<img src="8.png" height="99px" width="250px" />
+			</div>
+			<!-- <td><ui:repeat var="items" value="#{userBean.populateList}">
+							<h:commandLink value="#{items}"></h:commandLink>&nbsp;&nbsp;
+						</ui:repeat></td> -->
+			<div id="welcomeUser">
+				<table>
+				
+					<tr height="40px">
+						<td style="font-size:15px; color: black">Welcome :<h:outputText value="#{userBean.name}"></h:outputText>
+						</td>
+					</tr>
+						<tr>
+						<h:commandButton value="logout" class="rightNavigationButton" action="#{userBean.logout}"></h:commandButton>
+					</tr>
+					
+				</table>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

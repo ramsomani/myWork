@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mobile>
+
+ <mobile type="iphone">
+        <Name>IPHONE</Name>
+        <Id>1</Id>
+        <Color>Red</Color>
+   </mobile>
+ <mobile type="windows">
+        <Name>WINDOWS</Name>
+        <Id>2</Id>
+        <Color>White</Color>
+   </mobile>
+   <mobile type="android">
+        <Name>ANDROID</Name>
+        <Id>3</Id>
+        <Color>Black</Color>
+   </mobile>
+</mobile>

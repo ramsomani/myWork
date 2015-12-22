@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#header {
+	background-color: grey;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+
+#nav {
+	line-height: 30px;
+	background-color: yellow;
+	height: 650px;
+	width: 200px;
+	float: left;
+	padding: 5px;
+}
+
+#footer {
+	background-color: red;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+	$(document)
+			.ready(
+					function() {
+						$('#tbox')
+								.click(
+										function() {
+											var title = prompt("Please Enter Your Title");
+											var type = prompt("Please Enter Your Field");
+											if (title != null & type != null) {
+												$('#add')
+														.append(
+																"<tr><td>"
+																		+ title
+																		+ "</td><td><input type='"+type+"' name='"+title.concat(type)+"' ></td><td><input type='button' class='rbox' value='-'/></td></tr>");
+											}
+										});
+					
+ 					  $(document).on('click', '.rbox', function () { 
+					      $(this).closest('tr').remove();
+						    
+						 }); 
+
+					});
+</script>
+</head>
+<body>
+
+	<div id="header">
+		<h1>Book Gallery</h1>
+	</div>
+
+	<div id="nav">
+		book<br> copy<br> notebook<br>
+	</div>
+
+	<div id="section">
+		<center>
+		<form action="Show" method="get">
+			<table border="1">
+				<tr align="center">
+					<input type="button" id="tbox" value="Add Field">
+					<br>
+				</tr>
+				<tr id="add">
+					<br>
+				</tr>
+				<tr>
+				<input type="submit" id="sbox" value="Submit" />
+				</tr>
+			</table>
+			</form>
+		</center>
+	</div>
+	<div id="footer">Copyright © yash.com</div>
+
+</body>
+</html>

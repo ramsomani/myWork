@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" type="text/css" href="external.css" />
+	<script type="text/javascript" src= "jquery.js"></script>
+	<script type="text/javascript" src="external.js"></script>
+	<script type="text/javascript" src="jquery-ui.css"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
+	
+</h:head>
+<h:body>
+	<div id="main">
+		<div id="top">
+			<div id="topright">
+				<h:form prependId="false">
+				<table>
+					<tr>
+						<td>Welcome 
+						<h:outputText value="#{customerBean.customer.username}"></h:outputText>
+						</td>
+						<td>
+						<h:commandButton type="submit" value="logout" action="#{customerBean.logout}"></h:commandButton>
+						</td>
+					</tr>
+				</table>
+				</h:form>
+			</div>
+			<div id="topleft">
+				<span>Cart:</span>
+				<h:outputText value="#{productBean.count}"></h:outputText>
+			</div>
+		</div>
+	<div id="right">
+			<div id="menproduct" style="display:none;">
+				<div id="right1">
+					<h:form prependId="false">
+						<table id="table1">
+							<tr>
+								<td><img src="images/shirt1.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>2000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right2">
+					<h:form prependId="false">
+						<table id="table2">
+							<tr>
+								<td><img src="images/shirt2.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right3">
+					<h:form prependId="false">
+						<table id="table3">
+							<tr>
+								<td><img src="images/shirt3.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>4000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+			</div>
+			<div id="womenproduct" style="display: none;">
+				<div id="right1">
+					<h:form prependId="false">
+						<table id="table4">
+							<tr>
+								<td><img src="images/wshirt1.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right2">
+					<h:form prependId="false">
+						<table id="table5">
+							<tr>
+								<td><img src="images/wshirt2.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>5000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right3">
+					<h:form prependId="false">
+						<table id="table6">
+							<tr>
+								<td><img src="images/wshirt3.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>4000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()" /></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+			</div>
+
+			<div id="childproduct"  style="display: none;">
+				<div id="right1">
+					<h:form prependId="false">
+						<table id="table7">
+							<tr>
+								<td><img src="images/kshirt1.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>2000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right2">
+					<h:form prependId="false">
+						<table id="table8">
+							<tr>
+								<td><img src="images/kshirt2.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>3000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+				<div id="right3">
+					<h:form prependId="false">
+						<table id="table9">
+							<tr>
+								<td><img src="images/kshirt3.jpg" alt="NO " height="90px"
+									width="100px" /></td>
+							</tr>
+							<tr>
+								<td>Product Name :</td>
+								<td>Shirt</td>
+							</tr>
+							<tr>
+								<td>Price :</td>
+								<td>4000</td>
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><h:commandButton
+										type="button" value="Add To Cart" class="display" onclick="myfunction()"/></td>
+
+							</tr>
+						</table>
+					</h:form>
+				</div>
+			</div>	
+	</div>
+		<div id="left">
+			<div id="left1">
+				<table>
+					<tr>
+						<td><h:commandButton type="submit" id="men" value="men"></h:commandButton>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="left2">
+				<table>
+					<tr>
+						<td><h:commandButton type="submit" id="women" value="women"></h:commandButton>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="left3">
+				<table>
+					<tr>
+						<td><h:commandButton type="submit" id="child" value="child"></h:commandButton>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="left4">
+				<h:form prependId="false">
+				<table>
+					<tr>
+						<td><h:commandButton type="submit" id="pay" value="Proceed To Pay" action="#{productBean.add}"></h:commandButton>
+						</td>
+					</tr>
+				</table>
+				</h:form>
+			</div>
+		</div>
+</div>
+	<div id="dialog" style="display: none;">
+				<h:form>
+						<table>
+							<tr>
+								<td>Product Name</td>
+								<td>
+								<input type="text" id="name" readonly="readonly" name="abc"/> 
+								</td>
+							</tr>
+							<tr>
+								<td>Product Price :</td>
+								<td>
+								<input type="text" id="price" readonly="readonly" name="xyz"/> 
+								</td>
+							</tr>
+							<tr>
+								<td>Quantity</td>
+								<td><input type="text" id="quantity" name="rst" /></td>
+							</tr>
+							<tr>
+								<td>Total Price</td>
+								<td><input type="text" id="total" readonly="readonly" name="pqr"/></td>
+							</tr>
+							<tr>
+								<td colspan="2" ><h:commandButton type="submit" value="Add" action="#{productBean.save}" /> </td>
+							</tr>
+					</table>
+			</h:form>
+	</div>
+</h:body>
+</html>

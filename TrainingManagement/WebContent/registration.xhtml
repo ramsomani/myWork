@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="jquery/register.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</h:head>
+<body id="registrationBody">
+	<h:form prependId="false" id="registrationForm">
+		<center>
+		<div id="registrationBox">
+			<h2>Register For New User</h2>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><h:inputText id="name" value="#{userBean.name}"></h:inputText>
+					</td>
+					<td><span id="spanname"></span></td>
+				</tr>
+				<tr>
+					<td>Contact</td>
+					<td><h:inputText id="contact" value="#{userBean.contact}"></h:inputText>
+					</td>
+					<td><span id="spancontact"></span></td>
+				</tr>
+				<tr>
+					<td>Email Id</td>
+					<td><h:inputText id="email_id" value="#{userBean.email_id}"></h:inputText>
+					</td>
+					<td><span id="spanemail"></span></td>
+				</tr>
+				<tr>
+					<td>Designation</td>
+					<td><h:selectOneMenu value="#{userBean.designation_id}"
+							id="designation">
+
+							<f:selectItem itemValue="null" itemLabel="--Select--" />
+							<f:selectItem itemValue="1" itemLabel="Manager" />
+							<f:selectItem itemValue="2" itemLabel="Trainer" />
+							<f:selectItem itemValue="3" itemLabel="Trainee" />
+
+						</h:selectOneMenu></td>
+				</tr>
+				<tr>
+					<td>User Name</td>
+					<td><h:inputText id="username" value="#{userBean.username}"></h:inputText>
+					</td>
+					<td><span id="spanuser"></span></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><h:inputSecret id="password" value="#{userBean.password}"></h:inputSecret>
+					</td>
+					<td><span id="spanpassword"></span></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><h:commandButton type="submit"
+							value="Save" action="#{userBean.register}" id="submitButton" /></td>
+				</tr>
+			</table>
+		</div>
+		</center>
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+	<form action="TechSupportServlet" method="post">
+		<table>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Software</td>
+				<td><select>
+						<option value="">Select</option>
+						<option value="outlook">Outlook</option>
+						<option value="adobe">Adobe</option>
+						<option value="eclipse">Eclipse</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td>OS</td>
+				<td><select>
+						<option value="">Select</option>
+						<option value="windows8">Windows 8</option>
+						<option value="ubauntu">Ubantu</option>
+						<option value="windows7">Windows 7</option>
+
+				</select></td>
+			</tr>
+
+			<tr>
+				<td>Description</td>
+				<td><textarea name="textarea"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="submit"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
